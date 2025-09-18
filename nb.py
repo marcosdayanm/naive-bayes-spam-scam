@@ -1,9 +1,7 @@
 import pickle
 import pandas as pd
-from sklearn.model_selection import train_test_split, KFold
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, roc_curve, precision_recall_fscore_support, accuracy_score, ConfusionMatrixDisplay, precision_recall_curve, average_precision_score
 
 from preprocessing import load_dataset, clean_text
 

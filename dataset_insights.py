@@ -5,8 +5,6 @@ import matplotlib.pyplot as plt
 from matplotlib.container import BarContainer
 
 
-
-
 if __name__ == "__main__":
     dataset = load_dataset("data/dataset.csv")
     if dataset is None:

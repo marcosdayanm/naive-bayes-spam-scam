@@ -8,8 +8,6 @@ from nb import load_model_and_vectorizer, predict
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
-# MODEL_PATH = Path("artifacts/model.joblib")
-
 model, vectorizer = None, None 
 
 
@@ -17,7 +15,7 @@ model, vectorizer = None, None
 def classify(model: MultinomialNB, vectorizer: TfidfVectorizer, text: str) -> Tuple[str, str]:
     pred = predict(model, vectorizer, text)
     tag = "scam" if pred == 1 else "spam"
-    color = "#e53935" if tag == "scam" else "#fbc02d"  # rojo para spam, amarillo para scam
+    color = "#e53935" if tag == "scam" else "#fbc02d"
     return tag, color
 
 

@@ -1,4 +1,3 @@
-# ==== IMPORTS EXTRA PARA INSIGHTS ====
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -82,7 +81,7 @@ def plot_kfold_insights(dataset: pd.DataFrame, y_true_all, y_pred_oof, y_proba_o
     coefs = nb_full.feature_log_prob_[1] - nb_full.feature_log_prob_[0]
     feature_names = np.array(vec_full.get_feature_names_out())
 
-    # Top 20 SCAM (clase 1) -> pesos más altos
+    # Top 20 SCAM
     top_idx_1 = np.argsort(coefs)[-20:]
     plt.figure(figsize=(6, 6))
     plt.barh(feature_names[top_idx_1], coefs[top_idx_1])
@@ -91,10 +90,10 @@ def plot_kfold_insights(dataset: pd.DataFrame, y_true_all, y_pred_oof, y_proba_o
     plt.tight_layout()
     plt.show()
 
-    # Top 20 SPAM (clase 0) -> pesos más bajos
+    # Top 20 SPAM
     top_idx_0 = np.argsort(coefs)[:20]
     plt.figure(figsize=(6, 6))
-    plt.barh(feature_names[top_idx_0], -coefs[top_idx_0])  # magnitud positiva para visualizar
+    plt.barh(feature_names[top_idx_0], -coefs[top_idx_0])
     plt.title("Top 20 tokens indicativos de SPAM (clase 0)")
     plt.xlabel("Peso (|log-prob diff|)")
     plt.tight_layout()
