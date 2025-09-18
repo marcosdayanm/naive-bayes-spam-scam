@@ -1,3 +1,9 @@
+# Naive Bayes SPAM/SCAM classifier
+
+In Mexico, it is very common to receive suspicious messages from unknown or sketchy sources. This project builds a text classification pipeline to automatically detect spam and scam messages.
+
+<img src="ui.png" width="auto" height="500px" />
+
 # Setup
 
 ## Install dependencies with your favorite packae manager
@@ -28,13 +34,13 @@ This script will display some insights of the dataset and its distribution
 
 Run `python nb.py`
 
-This script will train a NB model with the `data/train.csv`, and then store as compiled objects the Tfidf vectorizer and the NB model for production use
+This script will train a NB model with the `data/train.csv`, and then store as compiled objects the TF-IDF vectorizer and the NB model for production use
 
 ## (Optional) Visualize model insights
 
 Run `python model_insights.py`
 
-This script will perform a K-fold cross validation with the dataset and will evaluate the model based on its Precision, Accuracy, Recall, F1, ROC, AUC, and the Confusion matrix. It will also how the most significative tokens gotten by the Tfidf vectorizer for SPAM and SCAM
+This script will perform a K-fold cross validation with the dataset and will evaluate the model based on its Precision, Accuracy, Recall, F1, ROC, AUC, and the Confusion matrix. It will also how the most significative tokens gotten by the TF-IDF vectorizer for SPAM and SCAM
 
 ## Run user interface
 
